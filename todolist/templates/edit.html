@@ -1,0 +1,41 @@
+{%extends 'basetemplate.html'%}
+
+{% block title %}
+  <title> Edit Task - Taskmaster </title>
+{% endblock title %}
+
+
+
+
+
+{% block content %}
+
+<div class="container" >
+    <br> <br>
+    <div>
+        {% if task_obj.owner == request.user %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" name="task" class="form-control col-lg-6" value="{{task_obj.task}}" id="exampleInputEmail1" placeholder = "edit task">
+                
+                <br>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="done"  id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                    mark as completed
+                    </label>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary col-lg-2">edit task</button>
+        </form>
+        {% else %}
+        <center> <p class="h5 shadow p-3">Access Denied... </p> </center>
+
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}

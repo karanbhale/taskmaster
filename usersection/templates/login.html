@@ -1,0 +1,43 @@
+{%extends 'basetemplate.html'%}
+
+{% block title %}
+  <title> Login - Taskmaster </title>
+{% endblock title %}
+
+{% load crispy_forms_tags %}
+
+
+
+
+{% block content %}
+
+<br>
+
+
+  <div class="container mt-7">
+
+    {% if messages %}
+      {% for message in messages %}
+      <div class="col-lg-2"></div>
+      <div class="alert alert-info  alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <div class="col-lg-2"></div>
+      {% endfor %}
+      {% endif %}
+
+      <form method="POST" class="mt-4 col-6 offset-lg-3 border border-success p-4  shadow p-3  bg-body rounded" >
+
+        <center> <p class="h5"> Login Here </p> </center>
+
+        {% csrf_token %}
+
+        {{form|crispy}}
+<br>
+      <center><a href="{% url 'todolist' %}">  <button class="btn btn-success btn-md mt-3 " type="submit"> Login </button> </a> </center>
+      <center> <p class="display-7 mt-2"> New User....<a href="{% url 'register' %}"> Register Here </a> </p> </center>
+
+      </form>
+  </div>
+{% endblock content %}
