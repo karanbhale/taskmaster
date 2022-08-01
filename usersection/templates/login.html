@@ -13,7 +13,7 @@
 
 <br>
 
-
+<center>
   <div class="container mt-7">
 
     {% if messages %}
@@ -27,7 +27,7 @@
       {% endfor %}
       {% endif %}
 
-      <form method="POST" class="mt-4 col-6 offset-lg-3 border border-success p-4  shadow p-3  bg-body rounded" >
+      <form method="POST" class="mt-4 col-lg-6 border border-success p-4  shadow p-3  bg-body rounded" >
 
         <center> <p class="h5"> Login Here </p> </center>
 
@@ -39,5 +39,5 @@
       <center> <p class="display-7 mt-2"> New User....<a href="{% url 'register' %}"> Register Here </a> </p> </center>
 
       </form>
-  </div>
+  </div> </center>
 {% endblock content %}

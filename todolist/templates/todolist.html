@@ -66,8 +66,8 @@
             <td class="col-5 h4"><center> {{obj.task}} </center></td>
             <td class="col-3 h4"> <center> task incompleted </center></td>
                   
-            <td class="col-2 h4"><a href="{%url 'edit_task' obj.id %}"> <center> <button type="button" class="btn btn-success">edit</button> </center> </a></td>
-            <td class="col-2 h4"><a href="{%url 'delete_task' obj.id %}"> <center>  <button type="button" class="btn btn-danger">delete</button> </center> </a></td>
+            <td class="col-2 h4"><a href="{%url 'edit_task' obj.id %}"> <center> <button type="button" class="btn btn-success btn-sm">edit</button> </center> </a></td>
+            <td class="col-2 h4"><a href="{%url 'delete_task' obj.id %}"> <center>  <button type="button" class="btn btn-danger btn-sm">delete</button> </center> </a></td>
 
         </tr>
       {% endif %}

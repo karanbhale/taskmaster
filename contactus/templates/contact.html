@@ -11,6 +11,7 @@
 {% endblock style %}
 
 {% block content %}
+<center>
 <div class='container'>
 
   <br>
@@ -26,7 +27,7 @@
   {% endif %}
 
 
-  <form action="" method="post" class="mt-4 col-6 offset-lg-3 border border-success p-4  shadow p-3 mb-5 bg-body rounded" >
+  <form action="" method="post" class="mt-4 col-lg-6  border border-success p-4  shadow p-3 mb-5 bg-body rounded" >
     {% csrf_token %}
   
     <center> <p class="h4"> Contact Us </p> </center>
@@ -61,4 +62,6 @@
     <center> <input type="submit" class="btn btn-success btn-md mt-3 " value="Submit"> <center>
 </form>
   {% comment %} using jinja 2 method {% endcomment %}
-</div>{% endblock content %}
+</div>
+</center>
+{% endblock content %}
