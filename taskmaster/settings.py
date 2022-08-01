@@ -11,6 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(SECRET_KEY=str,) #this is envrionment variable
 environ.Env.read_env(os.path.join(BASE_DIR, '.env')) #specifiying location of our .env file
 
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -35,6 +37,7 @@ INSTALLED_APPS = [
     'todolist',
     'usersection',
     'crispy_forms',
+    'contactus',
 ]
 
 MIDDLEWARE = [
@@ -129,6 +132,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "todolist"
 
 LOGIN_URL ="login"
+
+
+
 
 
 django_heroku.settings(locals())

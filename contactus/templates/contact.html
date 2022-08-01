@@ -1,0 +1,64 @@
+{%extends 'basetemplate.html'%}
+{% load static %}
+
+
+{% block title %}
+  <title> Contact Us - Taskmaster </title>
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class='container'>
+
+  <br>
+  {% if messages %}
+  {% for message in messages %}
+  <div class="col-lg-2"></div>
+  <div class="alert alert-info  alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div class="col-lg-2"></div>
+  {% endfor %}
+  {% endif %}
+
+
+  <form action="" method="post" class="mt-4 col-6 offset-lg-3 border border-success p-4  shadow p-3 mb-5 bg-body rounded" >
+    {% csrf_token %}
+  
+    <center> <p class="h4"> Contact Us </p> </center>
+
+    
+    <div
+    <tr>
+        <th>
+            <label for="id_email" class="form-label">Email:</label>
+        </th>
+        <td>
+            <input type="email" name="email" value="{{user.email}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <label for="id_subject"  class="form-label">Subject:</label>
+        </th>
+        <td>
+            <input type="text" name="subject" class="form-control" maxlength="255" required id="id_subject">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <label for="id_message" class="form-label">Message:</label>
+        </th>
+        <td>
+            <textarea name="message" class="form-control" cols="40" rows="10" required id="id_message"></textarea>
+        </td>
+    </tr>
+    
+    <center> <input type="submit" class="btn btn-success btn-md mt-3 " value="Submit"> <center>
+</form>
+  {% comment %} using jinja 2 method {% endcomment %}
+</div>{% endblock content %}

@@ -21,8 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('todolist/',include('todolist.urls')),
     path('account/',include('usersection.urls')),
+    path('contact/',include('contactus.urls')),
     path('',views.index, name="index"),
-    path('contact',views.contact,name='contact'), #  this is url if we provide todolist in url then we visit to this app
     path('about',views.about,name='about') #  this is url if we provide todolist in url then we visit to this app
 
 ]
