@@ -1,4 +1,3 @@
-from asyncio import all_tasks
 from django.core import paginator
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
@@ -56,10 +55,6 @@ def edit_task(request,task_id):
         context = {'task_obj':task_obj}
         return render(request,'edit.html',context)    
 
-def contact(request):
-    #working with jinja 2
-    context = {'welcome_text': 'welcome to contact us '}
-    return render(request,'contact.html',context) # redirecting to the html file in template folder
 
 def about(request):
     #working with jinja 2
